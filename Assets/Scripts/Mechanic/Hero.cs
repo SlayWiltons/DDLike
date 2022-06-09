@@ -6,19 +6,26 @@ using UnityEngine;
 public class Hero : MonoBehaviour, IDamageable<int>, IKillable
 {
     [SerializeField] private Character character;
+    private string nameCharacter;
     private int hp;
     private bool isEnemy;
+    private bool isReady;
+    private bool isDead;
 
     private void Start()
     {
         GetComponent<SpriteRenderer>().sprite = character.sprite;
+        nameCharacter = character.nameCharacter;
         hp = character.hp;
         isEnemy = character.isEnemy;
+        isReady = character.isReady;
+        isDead = character.isDead;
     }
 
     public void Die()
     {
-        Debug.Log("Меня убили!");
+        isDead = true;
+        Debug.Log(nameCharacter + " погиб");
     }
 
     public void TakeDamage(int takenDamage)
@@ -30,7 +37,22 @@ public class Hero : MonoBehaviour, IDamageable<int>, IKillable
         }
         else
         {
-            Debug.Log("Мне нанесли: " + takenDamage + " урона");
+            Debug.Log(nameCharacter + " получил " + takenDamage + " урона");
         }
+    }
+
+    public bool IsEnemy()
+    {
+        return isEnemy;
+    }
+
+    public bool IsReady()
+    {
+        return isReady;
+    }
+
+    public bool IsDead()
+    {
+        return isDead;
     }
 }

@@ -17,6 +17,19 @@ public class BattleSystemInitState : BattleSystemBaseState
                 battleSystem.heroesList.Add(battleSystem.allCharacterList[i]);
             }
         }
+        //
+        foreach (var hero in battleSystem.allCharactersList)
+        {
+            if (!hero.IsEnemy())
+            {
+                battleSystem.allHeroesList.Add(hero);
+            }
+            else
+            {
+                battleSystem.allEnemiesList.Add(hero);
+            }
+        }
+        //
         ShuffleCharacters(battleSystem);
         battleSystem.SetState(battleSystem.StartRoundState);
     }
@@ -34,6 +47,13 @@ public class BattleSystemInitState : BattleSystemBaseState
             var rand = Random.Range(i, battleSystem.allCharacterList.Count);
             battleSystem.allCharacterList[i] = battleSystem.allCharacterList[rand];
             battleSystem.allCharacterList[rand] = character;
+        }
+        for (var i = 0; i < battleSystem.allCharactersList.Count; i++)
+        {
+            var character = battleSystem.allCharactersList[i];
+            var rand = Random.Range(i, battleSystem.allCharactersList.Count);
+            battleSystem.allCharactersList[i] = battleSystem.allCharactersList[rand];
+            battleSystem.allCharactersList[rand] = character;
         }
     }
 }

@@ -9,6 +9,9 @@ public class BattleSystem : BattleSystemLogic
 {
     public int n = 1;
     public List<Character> allCharacterList;
+    public List<Hero> allCharactersList;
+    public List<Hero> allHeroesList;
+    public List<Hero> allEnemiesList;
     public List<Character> heroesList;
     public List<Character> enemiesList;
     public List<SkillButton> skillButtons;
