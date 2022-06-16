@@ -11,6 +11,7 @@ public class Hero : MonoBehaviour, IDamageable<int>, IKillable
     private bool isEnemy;
     private bool isReady;
     private bool isDead;
+    public List<Skill> skillsList;
 
     private void Start()
     {
@@ -20,6 +21,10 @@ public class Hero : MonoBehaviour, IDamageable<int>, IKillable
         isEnemy = character.isEnemy;
         isReady = character.isReady;
         isDead = character.isDead;
+        foreach (var skill in character.skills)
+        {
+            skillsList.Add(skill);
+        }
     }
 
     public void Die()

@@ -6,13 +6,13 @@ public class BattleSystemGetActiveCharacter : BattleSystemBaseState
 {
     public override void StartingState(BattleSystem battleSystem)
     {
-        foreach (var character in battleSystem.allCharacterList)
+        foreach (var character in battleSystem.allCharactersList)
         {
-            if (character.isDead)
+            if (character.IsDead())
             {
                 return;
             }
-            if (!character.isReady)
+            if (!character.IsReady())
             {
                 return;
             }
@@ -20,9 +20,9 @@ public class BattleSystemGetActiveCharacter : BattleSystemBaseState
 
             for (var i = 0; i < battleSystem.skillButtons.Count; i++)
             {
-                var localSkill = character.skills[i];
-                battleSystem.skillButtons[i].skill = character.skills[i];
-                battleSystem.skillButtons[i].skillText.text = character.skills[i].Name;
+                var localSkill = character.skillsList[i];
+                battleSystem.skillButtons[i].skill = character.skillsList[i];
+                battleSystem.skillButtons[i].skillText.text = character.skillsList[i].Name;
                 battleSystem.skillButtons[i].button.onClick.AddListener(delegate         
                 {
                     battleSystem.PlayerChooseTargetState.SetSkill(localSkill);
@@ -32,7 +32,7 @@ public class BattleSystemGetActiveCharacter : BattleSystemBaseState
             }
             break;
         }
-        if (battleSystem.activeCharacter.isEnemy)
+        if (battleSystem.activeCharacter.IsEnemy())
         {
             //choose skill as enemy;
         }
