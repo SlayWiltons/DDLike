@@ -12,6 +12,7 @@ public class BattleSystem : BattleSystemLogic
     public List<Hero> allHeroesList;
     public List<Hero> allEnemiesList;
     public List<SkillButton> skillButtons;
+    public Button waitButton;
     public Hero activeCharacter;
 
     private BattleSystemBaseState currentState;
@@ -39,4 +40,13 @@ public class BattleSystem : BattleSystemLogic
         currentState = state;
         state.StartingState(this);
     }
+
+    public void SkipHero()
+    {
+        Debug.Log("Button Wait pressed");
+        activeCharacter.SetAsNotReady();
+        SetState(GetActiveCharacterState);
+        Debug.Log(activeCharacter.IsReady());
+    }
+    
 }

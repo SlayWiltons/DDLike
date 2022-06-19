@@ -60,4 +60,9 @@ public class Hero : MonoBehaviour, IDamageable<int>, IKillable
     {
         return isDead;
     }
+
+    public void SetAsNotReady()
+    {
+        isReady = false;
+    }
 }

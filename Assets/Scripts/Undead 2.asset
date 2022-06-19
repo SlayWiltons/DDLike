@@ -17,7 +17,6 @@ MonoBehaviour:
   hp: 50
   skills:
   - {fileID: 11400000, guid: b56a3e16e688c6f4aacaec70e54c4138, type: 2}
-  - {fileID: 11400000, guid: 967abf068c0cb4246bc7a4dc1f12f60d, type: 2}
   isEnemy: 1
   isReady: 1
   isDead: 0

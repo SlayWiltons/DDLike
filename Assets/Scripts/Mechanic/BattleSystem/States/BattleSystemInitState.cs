@@ -36,4 +36,6 @@ public class BattleSystemInitState : BattleSystemBaseState
             battleSystem.allCharactersList[rand] = character;
         }
     }
+
+    
 }

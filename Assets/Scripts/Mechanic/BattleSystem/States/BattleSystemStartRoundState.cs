@@ -17,7 +17,7 @@ public class BattleSystemStartRoundState : BattleSystemBaseState
     private IEnumerator ShowingRound(BattleSystem battleSystem)
     {
         Debug.Log("Round " + battleSystem.n);
-        yield return new WaitForSeconds(3.0f);
+        yield return new WaitForSeconds(0.5f);
         Debug.Log("Proceeding");
         battleSystem.SetState(battleSystem.GetActiveCharacterState);
     }

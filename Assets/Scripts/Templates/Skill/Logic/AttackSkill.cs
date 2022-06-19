@@ -10,9 +10,14 @@ public class AttackSkill : Skill
     public DamageType damageType;
     public TargetType targetType;
 
-    public override void StartingExecuteSkill()
+    /*public override void StartingExecuteSkill(BattleSystem battleSystem)
     {
+        
+    }*/
 
-        Debug.Log(targetType);
+    public int Damage()
+    {
+        var rand = Random.Range(minDamage, maxDamage);
+        return rand;
     }
 }

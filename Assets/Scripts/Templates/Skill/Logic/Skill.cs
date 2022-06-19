@@ -6,7 +6,7 @@ public abstract class Skill : ScriptableObject
 {
     public string Name;
 
-    public virtual void StartingExecuteSkill()
+    public virtual void StartingExecuteSkill(BattleSystem battleSystem)
     {
 
     }

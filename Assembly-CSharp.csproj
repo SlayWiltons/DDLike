@@ -70,8 +70,8 @@
     <Compile Include="Assets\Scripts\Interfaces\IKillable.cs" />
     <Compile Include="Assets\Scripts\Mechanic\BattleSystem\States\BattleSystemStartRoundState.cs" />
     <Compile Include="Assets\Scripts\Templates\Skill\Logic\AttackSkill.cs" />
-    <Compile Include="Assets\Scripts\Templates\Skill\Logic\IExecuteable.cs" />
     <Compile Include="Assets\Scripts\Mechanic\Hero.cs" />
+    <Compile Include="Assets\Scripts\Templates\Skill\Logic\SingleTargetAttack.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
