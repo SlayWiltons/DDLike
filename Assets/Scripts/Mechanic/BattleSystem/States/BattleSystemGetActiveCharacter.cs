@@ -6,30 +6,37 @@ public class BattleSystemGetActiveCharacter : BattleSystemBaseState
 {
     public override void StartingState(BattleSystem battleSystem)
     {
-        Debug.Log("GetActiveCharacterState");
+        var notReady = 0;
         foreach (var character in battleSystem.allCharactersList)
         {
-            if (character.IsDead())
-            {
-                return;
-            }
+            
             if (character.IsReady())
             {
                 battleSystem.activeCharacter = character;
+                character.SetEnemiesList(battleSystem);
                 break;
             }
-
+            else
+            {
+                notReady++;
+                if (notReady == battleSystem.allCharactersList.Count)
+                {
+                    battleSystem.n++;
+                    notReady = 0;
+                    battleSystem.SetState(battleSystem.StartRoundState);
+                }
+            }
         }
 
         if (battleSystem.activeCharacter.IsEnemy())
         {
-            //choose skill as enemy;
-            for (var i = 0; i < battleSystem.activeCharacter.skillsList.Count; i++)
+            foreach (var skillButton in battleSystem.skillButtons)
             {
-                battleSystem.skillButtons[i].skillText.text = "";
-                battleSystem.skillButtons[i].button.interactable = false;
+                skillButton.skillText.text = "";
+                skillButton.button.interactable = false;
             }
             battleSystem.waitButton.interactable = false;
+            battleSystem.SetState(battleSystem.EnemyChooseTargetState);
         }
         else
         {

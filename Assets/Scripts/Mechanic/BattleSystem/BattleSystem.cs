@@ -21,6 +21,8 @@ public class BattleSystem : BattleSystemLogic
     public BattleSystemGetActiveCharacter GetActiveCharacterState = new BattleSystemGetActiveCharacter();
     public BattleSystemAwaitingOrders AwaitingOrdersState = new BattleSystemAwaitingOrders();
     public BattleSystemPlayerChooseTarget PlayerChooseTargetState = new BattleSystemPlayerChooseTarget();
+    public BattleSystemEnemyChooseTarget EnemyChooseTargetState = new BattleSystemEnemyChooseTarget();
+    public BattleSystemResultsState CalculatingResultsState = new BattleSystemResultsState();
 
 
 
@@ -48,5 +50,7 @@ public class BattleSystem : BattleSystemLogic
         SetState(GetActiveCharacterState);
         Debug.Log(activeCharacter.IsReady());
     }
+
+    
     
 }

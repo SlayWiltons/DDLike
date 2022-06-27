@@ -59,19 +59,21 @@
     <Compile Include="Assets\Scripts\Mechanic\BattleSystem\BattleSystem.cs" />
     <Compile Include="Assets\Scripts\Mechanic\BattleSystem\States\BattleSystemAwaitingOrders.cs" />
     <Compile Include="Assets\Scripts\Templates\Skill\Logic\Skill.cs" />
-    <Compile Include="Assets\Scripts\Mechanic\BattleSystemLogic.cs" />
+    <Compile Include="Assets\Scripts\Mechanic\BattleSystem\BattleSystemLogic.cs" />
     <Compile Include="Assets\Scripts\Mechanic\BattleSystem\States\BattleSystemPlayerChooseTarget.cs" />
     <Compile Include="Assets\Scripts\Mechanic\SkillButton.cs" />
     <Compile Include="Assets\Scripts\Mechanic\BattleSystem\States\BattleSystemBaseState.cs" />
     <Compile Include="Assets\Scripts\Templates\Skill\Logic\TargetType.cs" />
     <Compile Include="Assets\Scripts\Mechanic\BattleSystem\States\BattleSystemInitState.cs" />
+    <Compile Include="Assets\Scripts\Templates\Skill\Logic\SingleTargetAttack.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IDamageable.cs" />
     <Compile Include="Assets\Scripts\Mechanic\BattleSystem\States\BattleSystemGetActiveCharacter.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IKillable.cs" />
+    <Compile Include="Assets\Scripts\Mechanic\BattleSystem\States\BattleSystemEnemyChooseTarget.cs" />
     <Compile Include="Assets\Scripts\Mechanic\BattleSystem\States\BattleSystemStartRoundState.cs" />
     <Compile Include="Assets\Scripts\Templates\Skill\Logic\AttackSkill.cs" />
     <Compile Include="Assets\Scripts\Mechanic\Hero.cs" />
-    <Compile Include="Assets\Scripts\Templates\Skill\Logic\SingleTargetAttack.cs" />
+    <Compile Include="Assets\Scripts\Mechanic\BattleSystem\States\BattleSystemResultsState.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

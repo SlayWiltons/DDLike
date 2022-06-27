@@ -6,12 +6,13 @@ using UnityEngine;
 public class Hero : MonoBehaviour, IDamageable<int>, IKillable
 {
     [SerializeField] private Character character;
+    [SerializeField] private int hp;
     private string nameCharacter;
-    private int hp;
     private bool isEnemy;
-    private bool isReady;
+    [SerializeField] private bool isReady;
     private bool isDead;
     public List<Skill> skillsList;
+    public List<Hero> enemiesList;
 
     private void Start()
     {
@@ -46,6 +47,33 @@ public class Hero : MonoBehaviour, IDamageable<int>, IKillable
         }
     }
 
+    public void SetEnemiesList(BattleSystem battleSystem)
+    {
+        enemiesList.Clear();
+        foreach (var hero in battleSystem.allCharactersList)
+        {
+            if (!isEnemy)
+            {
+                if (hero.isEnemy)
+                {
+                    enemiesList.Add(hero);
+                }
+            }
+            else
+            {
+                if (!hero.isEnemy)
+                {
+                    enemiesList.Add(hero);
+                }
+            }
+        }
+    }
+
+    public void HideOnBoard()
+    {
+        gameObject.SetActive(false);
+    }
+
     public bool IsEnemy()
     {
         return isEnemy;
@@ -64,5 +92,10 @@ public class Hero : MonoBehaviour, IDamageable<int>, IKillable
     public void SetAsNotReady()
     {
         isReady = false;
+    }
+
+    public void SetAsReady()
+    {
+        isReady = true;
     }
 }

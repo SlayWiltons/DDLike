@@ -6,17 +6,6 @@ public class BattleSystemInitState : BattleSystemBaseState
 {
     public override void StartingState(BattleSystem battleSystem)
     {
-        foreach (var hero in battleSystem.allCharactersList)
-        {
-            if (!hero.IsEnemy())
-            {
-                battleSystem.allHeroesList.Add(hero);
-            }
-            else
-            {
-                battleSystem.allEnemiesList.Add(hero);
-            }
-        }
         ShuffleCharacters(battleSystem);
         battleSystem.SetState(battleSystem.StartRoundState);
     }
@@ -28,6 +17,8 @@ public class BattleSystemInitState : BattleSystemBaseState
 
     private void ShuffleCharacters(BattleSystem battleSystem)
     {
+        battleSystem.allCharactersList.AddRange(battleSystem.allEnemiesList);
+        battleSystem.allCharactersList.AddRange(battleSystem.allHeroesList);
         for (var i = 0; i < battleSystem.allCharactersList.Count; i++)
         {
             var character = battleSystem.allCharactersList[i];

@@ -18,7 +18,10 @@ public class BattleSystemStartRoundState : BattleSystemBaseState
     {
         Debug.Log("Round " + battleSystem.n);
         yield return new WaitForSeconds(0.5f);
-        Debug.Log("Proceeding");
+        foreach (var character in battleSystem.allCharactersList)
+        {
+            character.SetAsReady();
+        }
         battleSystem.SetState(battleSystem.GetActiveCharacterState);
     }
 }

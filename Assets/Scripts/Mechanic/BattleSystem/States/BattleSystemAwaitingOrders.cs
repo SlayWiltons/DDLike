@@ -11,10 +11,6 @@ public class BattleSystemAwaitingOrders : BattleSystemBaseState
 
     public override void ProceedingState(BattleSystem battleSystem)
     {
-        /*if (Input.GetMouseButtonDown(1))
-        {
-            battleSystem.activeCharacter.SetAsNotReady();
-            battleSystem.SetState(battleSystem.GetActiveCharacterState);
-        }*/
+
     }
 }

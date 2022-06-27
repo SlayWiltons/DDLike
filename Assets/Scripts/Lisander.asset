@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bee15fc499ab2e479adeef80d3d203b, type: 3}
   m_Name: Lisander
   m_EditorClassIdentifier: 
-  nameCharacter: 
+  nameCharacter: Lisander
   sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   hp: 100
   skills:
-  - {fileID: 11400000, guid: b56a3e16e688c6f4aacaec70e54c4138, type: 2}
+  - {fileID: 11400000, guid: b689fd84b4c497f48a2bf65803762856, type: 2}
+  - {fileID: 11400000, guid: b689fd84b4c497f48a2bf65803762856, type: 2}
   isEnemy: 0
   isReady: 1
   isDead: 0

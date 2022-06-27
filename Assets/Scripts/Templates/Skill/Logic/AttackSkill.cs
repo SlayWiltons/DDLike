@@ -8,12 +8,6 @@ public class AttackSkill : Skill
     [Min(0)] public int minDamage;
     [Min(0)] public int maxDamage;
     public DamageType damageType;
-    public TargetType targetType;
-
-    /*public override void StartingExecuteSkill(BattleSystem battleSystem)
-    {
-        
-    }*/
 
     public int Damage()
     {
