@@ -6,7 +6,7 @@ public class BattleSystemAwaitingOrders : BattleSystemBaseState
 {
     public override void StartingState(BattleSystem battleSystem)
     {
-        Debug.Log("Awaiting Orders State");
+        Debug.Log("Start Awaiting Orders State");
     }
 
     public override void ProceedingState(BattleSystem battleSystem)

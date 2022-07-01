@@ -34,7 +34,9 @@ public class SingleTargetAttack : AttackSkill
 
     public override void StartingExecuteSkill(BattleSystem battleSystem)
     {
-        chosenTarget.TakeDamage(Damage());
+        var damage = Damage();
+        chosenTarget.TakeDamage(damage);
+        Debug.Log(battleSystem.activeCharacter + " наносит " + damage + " урона");
         battleSystem.activeCharacter.SetAsNotReady();
         battleSystem.SetState(battleSystem.CalculatingResultsState);
     }

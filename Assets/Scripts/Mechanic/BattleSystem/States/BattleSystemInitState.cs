@@ -6,6 +6,7 @@ public class BattleSystemInitState : BattleSystemBaseState
 {
     public override void StartingState(BattleSystem battleSystem)
     {
+        Debug.Log("Start Init State");
         ShuffleCharacters(battleSystem);
         battleSystem.SetState(battleSystem.StartRoundState);
     }

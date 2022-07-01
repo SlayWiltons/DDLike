@@ -12,6 +12,7 @@ public class BattleSystem : BattleSystemLogic
     public List<Hero> allHeroesList;
     public List<Hero> allEnemiesList;
     public List<SkillButton> skillButtons;
+    public EndMenu endMenu;
     public Button waitButton;
     public Hero activeCharacter;
 
@@ -23,6 +24,7 @@ public class BattleSystem : BattleSystemLogic
     public BattleSystemPlayerChooseTarget PlayerChooseTargetState = new BattleSystemPlayerChooseTarget();
     public BattleSystemEnemyChooseTarget EnemyChooseTargetState = new BattleSystemEnemyChooseTarget();
     public BattleSystemResultsState CalculatingResultsState = new BattleSystemResultsState();
+    public BattleSystemFinalState FinalState = new BattleSystemFinalState();
 
 
 
@@ -45,12 +47,7 @@ public class BattleSystem : BattleSystemLogic
 
     public void SkipHero()
     {
-        Debug.Log("Button Wait pressed");
         activeCharacter.SetAsNotReady();
-        SetState(GetActiveCharacterState);
-        Debug.Log(activeCharacter.IsReady());
+        SetState(CalculatingResultsState);
     }
-
-    
-    
 }

@@ -6,6 +6,11 @@ public class BattleSystemStartRoundState : BattleSystemBaseState
 {
     public override void StartingState(BattleSystem battleSystem)
     {
+        Debug.Log("Start Round State");
+        foreach (var character in battleSystem.allCharactersList)
+        {
+            character.SetAsReady();
+        }
         battleSystem.StartCoroutine(ShowingRound(battleSystem));
     }
 
@@ -18,10 +23,6 @@ public class BattleSystemStartRoundState : BattleSystemBaseState
     {
         Debug.Log("Round " + battleSystem.n);
         yield return new WaitForSeconds(0.5f);
-        foreach (var character in battleSystem.allCharactersList)
-        {
-            character.SetAsReady();
-        }
         battleSystem.SetState(battleSystem.GetActiveCharacterState);
     }
 }

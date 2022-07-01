@@ -6,10 +6,10 @@ public class BattleSystemGetActiveCharacter : BattleSystemBaseState
 {
     public override void StartingState(BattleSystem battleSystem)
     {
+        Debug.Log("Start Get Active Character State");
         var notReady = 0;
         foreach (var character in battleSystem.allCharactersList)
         {
-            
             if (character.IsReady())
             {
                 battleSystem.activeCharacter = character;
@@ -45,6 +45,7 @@ public class BattleSystemGetActiveCharacter : BattleSystemBaseState
                 var localSkill = battleSystem.activeCharacter.skillsList[i];
                 battleSystem.skillButtons[i].skill = battleSystem.activeCharacter.skillsList[i];
                 battleSystem.skillButtons[i].skillText.text = battleSystem.activeCharacter.skillsList[i].Name;
+                battleSystem.skillButtons[i].button.onClick.RemoveAllListeners();
                 battleSystem.skillButtons[i].button.interactable = true;
 
                 battleSystem.skillButtons[i].button.onClick.AddListener(delegate
@@ -52,8 +53,8 @@ public class BattleSystemGetActiveCharacter : BattleSystemBaseState
                     battleSystem.PlayerChooseTargetState.SetSkill(localSkill);
                     battleSystem.SetState(battleSystem.PlayerChooseTargetState);
                 });
-                battleSystem.waitButton.interactable = true;
             }
+            battleSystem.waitButton.interactable = true;
             if (battleSystem.activeCharacter.skillsList.Count != battleSystem.skillButtons.Count)
             {
                 for (var i = battleSystem.activeCharacter.skillsList.Count; i < battleSystem.skillButtons.Count; i++)
@@ -62,7 +63,6 @@ public class BattleSystemGetActiveCharacter : BattleSystemBaseState
                     battleSystem.skillButtons[i].button.interactable = false;
                 }
             }
-            battleSystem.SetState(battleSystem.AwaitingOrdersState);
         }
     }
 }

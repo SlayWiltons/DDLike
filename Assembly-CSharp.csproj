@@ -60,9 +60,11 @@
     <Compile Include="Assets\Scripts\Mechanic\BattleSystem\States\BattleSystemAwaitingOrders.cs" />
     <Compile Include="Assets\Scripts\Templates\Skill\Logic\Skill.cs" />
     <Compile Include="Assets\Scripts\Mechanic\BattleSystem\BattleSystemLogic.cs" />
+    <Compile Include="Assets\Scripts\Mechanic\BattleSystem\States\BattleSystemResultsState.cs" />
     <Compile Include="Assets\Scripts\Mechanic\BattleSystem\States\BattleSystemPlayerChooseTarget.cs" />
     <Compile Include="Assets\Scripts\Mechanic\SkillButton.cs" />
     <Compile Include="Assets\Scripts\Mechanic\BattleSystem\States\BattleSystemBaseState.cs" />
+    <Compile Include="Assets\Scripts\Mechanic\EndMenu.cs" />
     <Compile Include="Assets\Scripts\Templates\Skill\Logic\TargetType.cs" />
     <Compile Include="Assets\Scripts\Mechanic\BattleSystem\States\BattleSystemInitState.cs" />
     <Compile Include="Assets\Scripts\Templates\Skill\Logic\SingleTargetAttack.cs" />
@@ -73,7 +75,7 @@
     <Compile Include="Assets\Scripts\Mechanic\BattleSystem\States\BattleSystemStartRoundState.cs" />
     <Compile Include="Assets\Scripts\Templates\Skill\Logic\AttackSkill.cs" />
     <Compile Include="Assets\Scripts\Mechanic\Hero.cs" />
-    <Compile Include="Assets\Scripts\Mechanic\BattleSystem\States\BattleSystemResultsState.cs" />
+    <Compile Include="Assets\Scripts\Mechanic\BattleSystem\States\BattleSystemFinalState.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

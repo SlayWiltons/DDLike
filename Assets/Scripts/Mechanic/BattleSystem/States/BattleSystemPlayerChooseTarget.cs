@@ -11,7 +11,7 @@ public class BattleSystemPlayerChooseTarget : BattleSystemBaseState
 
     public override void StartingState(BattleSystem battleSystem)   
     {
-        Debug.Log(chosenSkill);
+        Debug.Log("Start Player Choose Target State");
     }
 
     public void SetSkill(Skill skill)

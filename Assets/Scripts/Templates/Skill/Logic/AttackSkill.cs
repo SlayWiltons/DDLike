@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "NewAttackSkill", menuName = "Skill/Attack skill")]
+//[CreateAssetMenu(fileName = "NewAttackSkill", menuName = "Skill/Attack skill")]
 public class AttackSkill : Skill
 {
     [Min(0)] public int minDamage;

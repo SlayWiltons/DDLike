@@ -6,6 +6,7 @@ public class BattleSystemResultsState : BattleSystemBaseState
 {
     public override void StartingState(BattleSystem battleSystem)
     {
+        Debug.Log("Start Calculate State");
         foreach (var character in battleSystem.allCharactersList)
         {
             if (character.IsDead())
@@ -17,12 +18,13 @@ public class BattleSystemResultsState : BattleSystemBaseState
         }
         if (isAllDead(battleSystem.allEnemiesList))
         {
-            Debug.Log("You win!!!");
+            battleSystem.endMenu.ShowEndPanel("You win!!!");
+            battleSystem.SetState(battleSystem.FinalState);
         }
-
         if (isAllDead(battleSystem.allHeroesList))
         {
-            Debug.Log("You lose =(");
+            battleSystem.endMenu.ShowEndPanel("You lose =(");
+            battleSystem.SetState(battleSystem.FinalState);
         }
         else
         {
