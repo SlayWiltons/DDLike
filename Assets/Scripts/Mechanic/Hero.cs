@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(SpriteRenderer))]
 public class Hero : MonoBehaviour, IDamageable<int>, IKillable
 {
     [SerializeField] private Character character;
@@ -16,7 +15,6 @@ public class Hero : MonoBehaviour, IDamageable<int>, IKillable
 
     private void Start()
     {
-        GetComponent<SpriteRenderer>().sprite = character.sprite;
         nameCharacter = character.nameCharacter;
         hp = character.hp;
         isEnemy = character.isEnemy;
